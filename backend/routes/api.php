@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('{folder}/items', [App\Http\Controllers\API\ItemsRESTController::class, 'store']);
+
+//Route::put('items/{folder}', [App\Http\Controllers\API\ItemsRESTController::class, 'update']);
+
+Route::resource('items', App\Http\Controllers\API\ItemsRESTController::class);
+
+Route::resource('folders', App\Http\Controllers\API\FoldersConRESTController::class);

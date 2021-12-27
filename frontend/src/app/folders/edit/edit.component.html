@@ -1,0 +1,12 @@
+<div>
+  <h1>Editing task {{itemName}}</h1>
+  <div class="container formu">
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="form-inline">
+      <div class="form-group mx-sm-3 mb-2 cos">
+        <input type="text" id="add" class="form-control" value="{{itemName}}" name="add" ngModel required>
+      </div>
+      <button class="btn btn-primary" type="submit">Save</button>
+      <button class="btn btn-primary"><a [routerLink]="['/folders/' + folderName + '/items']">Cancel</a></button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+
+input{
+  height: 20px;
+  width: 300px;
+}
+.cos{
+  width: 300px;
+}
+.form-inline{
+  display: flex;
+  flex-flow: row wrap;
+}
+button{
+  text-align: center;
+  font-size: 15px;
+  align-items: center;
+}
+.formu{
+  margin-top: 15px;
+}

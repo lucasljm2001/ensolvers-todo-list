@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Folders</h1>
+  <table>
+    <tbody>
+      <tr *ngFor="let folder of folders">
+        <td>-</td>
+        <td>{{folder.folder_name}}</td>
+        <td><a [routerLink]="[folder.folder_name, 'items']">View items</a></td>
+        <td><button (click)="delete(folder.folder_name)">Remove</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="container formu">
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="form-inline">
+      <div class="form-group mx-sm-3 mb-2 cos">
+        <input type="text" id="add" class="form-control" name="add" ngModel required>
+      </div>
+        <button class="btn btn-primary mb-2" type="submit">Add</button>
+    </form>
+  </div>
+</div>

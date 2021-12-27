@@ -1,0 +1,23 @@
+
+<div>
+  <h1>Folders > {{folderName}}</h1>
+  <table>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>-</td>
+        <input type="checkbox" [id]="item.item_id" [checked]="item.is_marked" (change)="changeState($event, item)">
+        <label [for]="item.item_id">{{ item.item_description }}</label>
+        <td><a [routerLink]="[item.item_description]">Edit</a></td>
+        <td><button (click)="delete(item.item_id)">Remove</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="container formu">
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="form-inline">
+      <div class="form-group mx-sm-3 mb-2 cos">
+        <input type="text" id="add" class="form-control" name="add" ngModel required>
+      </div>
+      <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+  </div>
+</div>
