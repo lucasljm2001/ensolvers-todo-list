@@ -6,7 +6,7 @@
         <input type="text" id="add" class="form-control" value="{{itemName}}" name="add" ngModel required>
       </div>
       <button class="btn btn-primary" type="submit">Save</button>
-      <button class="btn btn-primary"><a [routerLink]="['/folders/' + folderName + '/items']">Cancel</a></button>
+      <button class="btn btn-primary" (click)="goBack()">Cancel</button>
     </form>
   </div>
 </div>

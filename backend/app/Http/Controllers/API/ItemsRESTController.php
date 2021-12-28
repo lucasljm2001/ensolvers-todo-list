@@ -97,42 +97,28 @@ class ItemsRESTController extends Controller
         $item_new_name = $request->post('item new name');
 
         if ($item_new_name == '') {
-            /*$resp = [
-                'data' => 'entro'
-            ];
-            return response()->json($resp);*/
+
             $item_new_name = $item_description;
         }
         if ($action == 'state') {
             Item::where('item_description', $item_description)
             ->update([
-            //'item_description' => $item_new_name,
             'is_marked' => $item_state
             ]);
-            /*$resp = [
-                'entro' => $item_state
-            ];
-            return response()->json($resp);*/
+
         } else{
             Item::where('item_description', $name)
             ->update([
-            'item_description' => $item_new_name,
-            //'is_marked' => $item_state
+            'item_description' => $item_new_name
             ]);
-            /*$resp = [
-                'entro' => $name
-            ];
-            return response()->json($resp);*/
         }
 
 
         $data = Item::select('*')
-                        ->get();
+                        ->where('item_description', $item_new_name)
+                        ->first();
 
-        $resp = [
-            'data' => $data
-        ];
-        return response()->json($resp);
+        return response()->json($data);
     }
 
     /**
@@ -143,11 +129,6 @@ class ItemsRESTController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        /*$item_description = $request->post('item name');
-
-        Item::where('item_description', $item_description)
-                ->delete();*/
-
         Item::where('item_id', $id)
                 ->delete();
 

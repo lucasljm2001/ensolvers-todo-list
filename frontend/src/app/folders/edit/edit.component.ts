@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Item } from 'src/app/models/items';
 import { ApiFoldersService } from '../api/api-folders.service';
+import {Location} from '@angular/common';
 
 @Component({
   templateUrl: './edit.component.html',
@@ -12,7 +13,7 @@ export class EditComponent implements OnInit {
 
   public itemName: string;
   public folderName: string;
-  constructor(ruta: ActivatedRoute, private api: ApiFoldersService) {
+  constructor(ruta: ActivatedRoute, private api: ApiFoldersService, private location: Location) {
     this.itemName = ruta.snapshot.params['itemName'];
     this.folderName = ruta.snapshot.params['folderName'];
   }
@@ -24,9 +25,15 @@ export class EditComponent implements OnInit {
     const add = form.value['add'];
     const newItem = new Item(this.folderName, add, null);
     this.api.changeItem(newItem, this.itemName).subscribe((data) =>{
-      //this.ngOnInit();
-      console.log(data)
+      this.changeTittle(data)
     });
     form.reset();
+  }
+
+  changeTittle(newTittle: any){
+    this.itemName = newTittle.item_description;
+  }
+  goBack(){
+    this.location.back();
   }
 }
