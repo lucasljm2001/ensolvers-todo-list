@@ -1,22 +1,58 @@
 
-<div class="container">
-  <h1>Folders > {{folderName}}</h1>
-  <table>
-    <tbody>
-      <tr *ngFor="let item of items">
-        <input type="checkbox" [id]="item.item_id" [checked]="item.is_marked" (change)="changeState($event, item)">
-        <label [for]="item.item_id">{{ item.item_description }}</label>
-        <td><a [routerLink]="[item.item_description]">Edit</a></td>
-        <td><button (click)="delete(item.item_id)">Remove</button></td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="container formu">
-    <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="form-inline">
-      <div class="form-group mx-sm-3 mb-2 cos">
-        <input type="text" id="add" class="form-control" name="add" ngModel required>
+<div class="container m-5 p-2 rounded mx-auto bg-light shadow">
+
+  <div class="row m-1 p-4">
+      <div class="col">
+          <div class="p-1 h1 text-primary text-center mx-auto display-inline-block">
+              <i class="fa fa-check bg-primary text-white rounded p-2"></i>
+              <u>Folders > {{folderName}}</u>
+          </div>
       </div>
-      <button class="btn btn-primary" type="submit">Add</button>
-    </form>
+  </div>
+
+  <div class="row m-1 p-3">
+      <div class="col col-11 mx-auto">
+          <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+            <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+              <div class="col">
+                <input class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded" type="text" placeholder="Add new .." name="add" ngModel required>
+              </div>
+            <div class="col-auto px-0 mx-0 mr-2">
+                <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+            </form>
+          </div>
+      </div>
+  </div>
+  <div class="p-2 mx-4 border-black-25 border-bottom"></div>
+
+  <div class="row mx-1 px-5 pb-3 w-80" *ngFor="let item of items">
+      <div class="col mx-auto">
+
+          <div class="row px-3 align-items-center todo-item rounded">
+              <div class="col-auto m-1 p-0 d-flex align-items-center">
+                  <h2 class="m-0 p-0">
+                    <input type="checkbox" [id]="item.item_id" [checked]="item.is_marked" (change)="changeState($event, item)">
+                  </h2>
+              </div>
+              <div class="col px-1 m-1 d-flex align-items-center">
+                <!--<input type="text" class="form-control form-control-lg border-0 edit-todo-input bg-transparent rounded px-3" readonly value="{{ item.item_description }}" title="{{ item.item_description }}" />-->
+                <h2>{{ item.item_description }}</h2>
+              </div>
+              <div class="col-auto m-1 p-0 px-3 d-none">
+              </div>
+              <div class="col-auto m-1 p-0">
+                  <div class="row d-flex align-items-center justify-content-end">
+                      <h5 class="m-0 p-0 px-2">
+                          <i class="fa fa-pencil lapicito" data-toggle="tooltip" data-placement="bottom" title="Edit todo" [routerLink]="[item.item_description]"></i>
+                      </h5>
+                      <h5 class="m-0 p-0 px-2">
+                          <i class="fa fa-trash-o text-danger btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo" (click)="delete(item.item_id)"></i>
+                      </h5>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
 </div>
+
