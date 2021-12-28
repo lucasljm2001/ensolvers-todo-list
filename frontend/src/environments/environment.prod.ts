@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url_back: "http://localhost/ensolvers-todo-list/backend/public/api/"
+  url_back: "https://ensolvers-todo-list-backend.herokuapp.com/api/"
 };
