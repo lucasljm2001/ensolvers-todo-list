@@ -40,3 +40,11 @@ form{
 .esp{
   margin-left: 10px;
 }
+@media screen and (max-width: 330px) {
+  form {
+    display: inline;
+  }
+  .esp{
+    display: inline;
+  }
+}
