@@ -18,7 +18,7 @@ Angular v13.1.1
   
 ## Try live version
 If you want to see the app running in heroku, touch the next link:  
-https://ensolvers-todo-list-frontend.herokuapp.com/folders/Work/items
+https://ensolvers-todo-list-frontend.herokuapp.com/folders
 
 ## Run locally
 ### Script bash
