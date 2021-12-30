@@ -11,14 +11,19 @@ sudo npm install -g @angular/cli
 sudo apt install apache2
 sudo apt install php libapache2-mod-php php-mbstring php-xmlrpc php-soap php-gd php-xml php-cli php-zip php-bcmath php-tokenizer php-json php-pear
 sudo apt install mysql-server
-sudo mysql -u root -p todo-list < database-schema/todo-list.sql
-sudo /etc/init.d/mysql start
+sudo mysql -h 127.0.0.1:8000 -u root -p  
+\. ./database-schema/todo-list.sql
+exit;
 curl -sS https://getcomposer.org/installer | php
 cd backend
 composer update
 mv .env.example .env
-sudo php artisan serve
 cd ../
 cd frontend
 npm install
+sudo /etc/init.d/mysql start
+cd backend
+cd ../
+cd frontend
+sudo php artisan serve
 sudo ng serve --o
