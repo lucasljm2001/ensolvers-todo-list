@@ -1,24 +1,4 @@
-<!--<div class="container">
-  <h1>Folders</h1>
-  <table>
-    <tbody>
-      <tr *ngFor="let folder of folders">
-        <td>-</td>
-        <td>{{folder.folder_name}}</td>
-        <td><a [routerLink]="[folder.folder_name, 'items']">View items</a></td>
-        <td><button (click)="delete(folder.folder_name)">Remove</button></td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="container formu">
-    <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="form-inline">
-      <div class="form-group mx-sm-3 mb-2 cos">
-        <input type="text" id="add" class="form-control" name="add" ngModel required>
-      </div>
-        <button class="btn btn-primary mb-2" type="submit">Add</button>
-    </form>
-  </div>
-</div>-->
+
 <div class="container m-5 p-2 rounded mx-auto bg-light shadow">
 
   <div class="row m-1 p-4">
@@ -50,19 +30,18 @@
 
           <div class="row px-3 align-items-center todo-item rounded">
               <div class="col px-1 m-1 d-flex align-items-center">
-                <!--<input type="text" class="form-control form-control-lg border-0 edit-todo-input bg-transparent rounded px-3" readonly value="{{folder.folder_name}}" title="{{folder.folder_name}}" />-->
-
-                  <h2>{{folder.folder_name}}</h2>
+                
+                  <h2>{{folder.name}}</h2>
               </div>
               <div class="col-auto m-1 p-0 px-3 d-none">
               </div>
               <div class="col-auto m-1 p-0">
                   <div class="row d-flex align-items-center justify-content-end">
                       <h5 class="m-0 p-0 px-2">
-                        <a [routerLink]="[folder.folder_name, 'items']" class="lapicito">View items</a>
+                        <a [routerLink]="[folder.name, 'items']" class="lapicito">View items</a>
                       </h5>
                       <h5 class="m-0 p-0 px-2">
-                          <i class="fa fa-trash-o text-danger btn m-0 p-0 lapicito" data-toggle="tooltip" data-placement="bottom" title="Delete todo" (click)="delete(folder.folder_name)"></i>
+                          <i class="fa fa-trash-o text-danger btn m-0 p-0 lapicito" data-toggle="tooltip" data-placement="bottom" title="Delete todo" (click)="delete(folder.name)"></i>
                       </h5>
                   </div>
               </div>

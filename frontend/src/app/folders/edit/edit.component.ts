@@ -31,7 +31,7 @@ export class EditComponent implements OnInit {
   }
 
   changeTittle(newTittle: any){
-    this.itemName = newTittle.item_description;
+    this.itemName = newTittle.description;
   }
   goBack(){
     this.location.back();

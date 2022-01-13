@@ -38,25 +38,23 @@ export class ApiFoldersService {
    */
   public createFolder(newFolder: Folder) {
     return this.http.post(this.urlBack + 'folders',{
-        "folder name": newFolder.folder_name
+        "name": newFolder.folder_name
     });
   }
   public createItem(newItem: Item) {
     return this.http.post(this.urlBack + newItem.folder_name + '/items',{
-        "item name": newItem.item_description
+        "description": newItem.item_description
     });
   }
   public chageItemState(newItem: any, state: any) {
-    return this.http.put(this.urlBack  + 'items/' + newItem.item_id,{
-        "item name": newItem.item_description,
-        "item state": state,
-        "action": "state"
+    return this.http.put(this.urlBack  + 'items/' + newItem.description + '/state',{
+        "description": newItem.item_description,
+        "state": state
     });
   }
   public changeItem(newItem: any, oldItem: any) {
-    return this.http.put(this.urlBack  + 'items/' + oldItem,{
-        "item new name": newItem.item_description,
-        "action": "update"
+    return this.http.put(this.urlBack  + 'items/' + oldItem + '/update',{
+        "description": newItem.item_description
     });
   }
   public deleteItem(id: any) {

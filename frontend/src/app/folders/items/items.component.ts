@@ -24,6 +24,7 @@ export class ItemsComponent implements OnInit {
   private getItems() {
     this.api.items(this.folderName).subscribe((items: any) =>{
       this.items = items;
+      console.log(items);
     });
   }
   onSubmit(form: NgForm){
@@ -36,11 +37,11 @@ export class ItemsComponent implements OnInit {
   }
   changeState(event: any, item: any): void {
     if (event.currentTarget.checked) {
-      item.is_marked = 'true';
+      item.state = 'true';
     } else{
-      item.is_marked = null;
+      item.state = null;
     }
-    this.api.chageItemState(item, item.is_marked).subscribe((data: any) =>{
+    this.api.chageItemState(item, item.state).subscribe((data: any) =>{
       console.log(data);
     });
   }

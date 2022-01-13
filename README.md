@@ -2,11 +2,11 @@
 ## Requirements
 Mysql v10.4.22  
   
-php v8.0.13  
+Java v1.8.0  
   
-Composer v2.1.14  
+Jdk v11.0.11  
   
-Laravel v4.2.9  
+Spring Boot v2.6.2  
   
 NodeJS v16.13.1  
   
@@ -24,7 +24,7 @@ https://ensolvers-todo-list-frontend.herokuapp.com/folders
 ### Script bash
 To run the app this way just run script.sh file
 ### Manually
-To run the app manually, first go to the backend folder, then run php artisan serve.  
+To run the app manually, first go to the todolist folder, then run mnvw.cmd spring-boot:run.  
 Secondly, run the script todo-list.sql, that is in database-schema and finally go to  
 the frontend folder, and run ng serve --o, this will automatically  
 open the app in your browser.

@@ -1,15 +1,4 @@
-<!--<div>
-  <h1>Editing task {{itemName}}</h1>
-  <div class="container formu">
-    <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="form-inline">
-      <div class="form-group mx-sm-3 mb-2 cos">
-        <input type="text" id="add" class="form-control" value="{{itemName}}" name="add" ngModel required>
-      </div>
-      <button class="btn btn-primary" type="submit">Save</button>
-      <button class="btn btn-primary" (click)="goBack()">Cancel</button>
-    </form>
-  </div>
-</div>-->
+
 
 <div class="container m-5 p-2 rounded mx-auto bg-light shadow">
 
@@ -23,7 +12,7 @@
   </div>
 
   <div class="row m-1 p-3">
-      
+
             <form (ngSubmit)="onSubmit(form)" #form="ngForm">
               <div class="col">
                 <input type="text" id="add" class="form-control" value="{{itemName}}" name="add" ngModel required>
@@ -35,7 +24,7 @@
               <button type="button" class="btn btn-primary" (click)="goBack()">Cancel</button>
             </div>
             </form>
-      
+
   </div>
   <div class="p-2 mx-4 border-black-25 border-bottom"></div>
 </div>
