@@ -28,3 +28,6 @@ To run the app manually, first go to the todolist folder, then run mnvw.cmd spri
 Secondly, run the script todo-list.sql, that is in database-schema and finally go to  
 the frontend folder, and run ng serve --o, this will automatically  
 open the app in your browser.
+
+### Observation 
+Folder todolist replaces backend folder
